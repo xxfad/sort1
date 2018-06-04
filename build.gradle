@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'org.xxfad.sort'
+version '1.0-SNAPSHOT'
+def artifactId = "sort1"
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    maven { url 'http://neuroph.sourceforge.net/maven2/' }
+}
+
+dependencies {
+
+    compile 'org.jetbrains:annotations:15.0'
+
+    testCompile 'com.github.jsonzou:jmockdata:3.1.0'
+    testCompile 'org.apache.commons:commons-lang3:3.7'
+    testCompile 'org.testng:testng:+'
+}
+
+jar {
+    baseName = artifactId
+}
