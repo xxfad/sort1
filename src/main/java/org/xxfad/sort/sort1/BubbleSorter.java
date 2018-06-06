@@ -18,17 +18,11 @@ public class BubbleSorter {
         for (int i = 1; i < data.length; i++) {
             for (int j = 0; j < data.length - i; j++) {
                 if (data[j].compareTo(data[j + 1]) > 0) {
-                    swap(j, j + 1);
+                    ArraysUtils.swap(data, j, j + 1);
                 }
             }
         }
 
-    }
-
-    private void swap(int j1, int j2) {
-        Comparable temp = data[j2];
-        data[j2] = data[j1];
-        data[j1] = temp;
     }
 
 }

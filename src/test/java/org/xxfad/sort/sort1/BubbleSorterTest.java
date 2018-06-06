@@ -1,7 +1,5 @@
 package org.xxfad.sort.sort1;
 
-import com.github.jsonzou.jmockdata.JMockData;
-import com.github.jsonzou.jmockdata.MockConfig;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
@@ -14,11 +12,7 @@ public class BubbleSorterTest {
     @Test
     public void testSort() {
 
-        MockConfig mockConfig = new MockConfig()
-                .intRange(0, Integer.MAX_VALUE)
-                .sizeRange(0, 1000);
-
-        Integer[] data = JMockData.mock(Integer[].class, mockConfig);
+        Integer[] data = MockData.defaultRandomInts();
 
         System.out.println("Before: ");
         System.out.println(Arrays.toString(data));
@@ -29,7 +23,7 @@ public class BubbleSorterTest {
     }
 
     @Test
-    public void testSort100() {
+    public void test100Sort() {
         for (int i = 1; i < 101; i++) {
             System.out.println("round " + i + ": ");
 

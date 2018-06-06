@@ -7,9 +7,9 @@ import java.util.Arrays;
 import static org.testng.Assert.assertEquals;
 
 /**
- * @author xxfad 2018/6/5
+ * @author xxfad 2018/6/6
  */
-public class CocktailSorterTest {
+public class SelectionSorterTest {
 
     @Test
     public void testSort() {
@@ -20,19 +20,9 @@ public class CocktailSorterTest {
         System.out.println(Arrays.toString(data));
 
         System.out.println("After: ");
-        new CocktailSorter(data).sort();
+        new SelectionSorter(data).sort();
         System.out.println(Arrays.toString(data));
-    }
 
-    @Test
-    public void test100Sort() {
-        for (int i = 1; i < 101; i++) {
-            System.out.println("round " + i + ": ");
-
-            testSort();
-
-            System.out.println();
-        }
     }
 
     @Test
@@ -49,7 +39,7 @@ public class CocktailSorterTest {
         System.out.println(Arrays.toString(data));
 
         System.out.println("MySort: ");
-        new CocktailSorter(clone).sort();
+        new SelectionSorter(clone).sort();
         System.out.println(Arrays.toString(clone));
 
         assertEquals(data, clone);

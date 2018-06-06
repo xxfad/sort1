@@ -20,14 +20,14 @@ public class CocktailSorter {
         while (left < right) {
             for (int i = left; i < right; i++) {
                 if (data[i].compareTo(data[i + 1]) > 0) {
-                    swap(i, i + 1);
+                    ArraysUtils.swap(data, i, i + 1);
                 }
             }
             right--;
 
             for (int i = right; i > left; i--) {
                 if (data[i].compareTo(data[i - 1]) < 0) {
-                    swap(i, i - 1);
+                    ArraysUtils.swap(data, i, i - 1);
                 }
             }
 
@@ -36,9 +36,4 @@ public class CocktailSorter {
 
     }
 
-    private void swap(int j1, int j2) {
-        Comparable temp = data[j2];
-        data[j2] = data[j1];
-        data[j1] = temp;
-    }
 }
